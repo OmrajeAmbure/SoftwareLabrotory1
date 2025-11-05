@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+</head>
+<body>
+    <h1>List of Students</h1>
+
+    <table border="1" cellpadding="8" cellspacing="0">
+        <tr>
+            <th>Roll No</th>
+            <th>Name</th>
+            <th>Marks</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+
+        {% for student in students %}
+        <tr>
+            <td>{{ student[0] }}</td>
+            <td>{{ student[1] }}</td>
+            <td>{{ student[2] }}</td>
+            <td>{{ student[3] }}</td>
+
+            <!-- Actions Column -->
+            <td>
+                <!-- Delete Button -->
+                <form action="/delete_student/{{ student[0] }}" method="POST" style="display:inline;">
+                    <button type="submit" onclick="return confirm('Are you sure to delete?');">
+                        Delete
+                    </button>
+                </form>
+                <!-- Update Button -->
+                <form action="/update_student/{{ student[0] }}" method="GET" style="display:inline;">
+                    <button type="submit">Update</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

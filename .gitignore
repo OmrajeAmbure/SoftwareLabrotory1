@@ -1,0 +1,40 @@
+# Ignore virtual environment
+venv/
+my_project_env/
+env/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE / Editor folders
+.vscode/
+.idea/
+
+# Environment variables file
+.env
+
+# Log files
+*.log
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Python build / packaging
+build/
+dist/
+*.egg-info/
+
+# Byte-compiled / optimized / DLL files
+*.so
+
+# Database backup files or exported dumps
+*.sql
+*.db
+
+# Flask session files
+instance/
