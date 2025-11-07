@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabbbed UI Using DOM</title>
+</head>
+<body>
+    <div class="container">
+        <div class="tab-buttons">
+                <button class="button1 active" onclick="ShowTab(this,'text')">Text-Button</button>
+                <button class="button2" onclick="ShowTab(this,'img')">Image-Button</button>
+                <button class="button3" onclick="ShowTab(this,'video')">Video-Button</button>
+        </div>
+
+        <div id="text" class="tab-content" style="display:block;">
+            <h2>This is Text Button</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div id="img" class="tab-content" style="display: none;">
+            <h2>This is Image Button</h2>
+            <img src="https://thumbs.dreamstime.com/b/sculptural-camera-tripod-brushed-steel-captures-sunset-over-mountains-clouds-serene-location-made-stands-rocky-374064706.jpg" alt="Placeholder Image" width="320" height="240">
+        </div>
+        <div id="video" class="tab-content" style="display: none;">
+            <h2>This is Video Button</h2>
+            <video width="320" height="240" controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+<script>
+    function ShowTab(button, tabname){
+        // hide all tab contents
+        const contents = document.querySelectorAll('.tab-content');
+        contents.forEach(content => {
+            content.style.display = 'none';
+        });
+
+        // show the requested tab
+        const target = document.getElementById(tabname);
+        if (target) {
+            target.style.display = 'block';
+        }
+
+        // update active button classes
+        const buttons = document.querySelectorAll('.tab-buttons button');
+        buttons.forEach(b => b.classList.remove('active'));
+        if (button) {
+            button.classList.add('active');
+        }
+    }
+</script>
+</body>
+</html>
