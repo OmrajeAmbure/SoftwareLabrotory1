@@ -1,0 +1,26 @@
+On the SERVER System:
+
+Find the Server's IP Address:
+
+Windows: Open Command Prompt and type ipconfig, look for "IPv4 Address"
+
+Configure Firewall:
+
+Allow incoming connections on port 12345
+Windows: Windows Defender Firewall → Advanced Settings → Inbound Rules → New Rule → Port → TCP → 12345 → Allow
+
+Create the file to send:
+
+Create a file named file_to_send.txt in the same directory as the server script
+Add some content to it
+
+On the CLIENT System:
+
+Edit the client script:
+
+Replace 'SERVER_IP_ADDRESS' with the actual IP address of your server
+Example: SERVER_IP = '192.168.1.100'
+
+Ensure network connectivity:
+
+Both systems must be on the same local network

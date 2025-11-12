@@ -1,0 +1,50 @@
+What you need to know:
+
+Find the server's IP address:
+
+Windows: Open Command Prompt → ipconfig → Look for "IPv4 Address"
+
+Firewall Settings: Make sure port 12345 is allowed through the firewall
+
+Windows: Windows Defender Firewall → Allow an app → Add port 12345 UDP
+
+Both systems should be on the same network
+
+Client Side (udp_client.py)
+Change needed in line 4:
+pythonserver_address = ('SERVER_IP_ADDRESS', 12345)
+Replace 'localhost' with the actual IP address of the server machine.
+Example:
+pythonserver_address = ('192.168.1.100', 12345)  # Replace with your server's IP
+
+
+
+Step-by-Step Setup:
+
+On Server Machine:
+
+Find its IP address (e.g., 192.168.1.100)
+Create file_to_send.txt in the same directory as the server script
+Run: python udp_server.py
+
+
+On Client Machine:
+
+Update server_address with the server's IP
+Run: python udp_client.py
+
+
+Network Requirements:
+
+Both machines must be on the same local network (same WiFi/LAN)
+Or if on different networks, proper port forwarding and routing must be configured
+
+
+Testing Checklist:
+✓ Server IP address identified
+✓ Client code updated with server IP
+✓ Firewall allows port 12345 UDP
+✓ Both machines on same network
+✓ file_to_send.txt exists on server
+✓ Run server first, then client
+That's it! The only code change needed is updating the client's server_address with the actual server IP.
